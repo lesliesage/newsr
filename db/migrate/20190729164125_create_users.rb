@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :username
-      t.boolean :private?, :default => true
+      t.boolean :private?, :default => false
       t.string :password_digest
 
       t.timestamps

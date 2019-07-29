@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_07_29_165117) do
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.string "blurb"
-    t.string "url"
-    t.string "img_url"
+    t.text "title"
+    t.text "blurb"
+    t.text "url"
+    t.text "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_165117) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.boolean "private?", default: true
+    t.boolean "private?", default: false
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
