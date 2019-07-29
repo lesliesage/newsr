@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
- 
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-  post 'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
   resources :follows
   resources :searches
   resources :favorites
   resources :search_terms
   resources :articles
   root 'users#homepage'
+  get 'signup', to: 'users#new'
   get 'users/:id', to: 'users#show', as: 'user'
   resources :users
 

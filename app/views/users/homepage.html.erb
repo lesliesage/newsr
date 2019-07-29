@@ -1,10 +1,13 @@
 User homepage
 
-<h1>Welcome <%=@user.first_name%>!</h1>
+<h1>Welcome <%= current_firstname %>!</h1>
 
 
 Search Bar
 
 Favorited Articles
 
-People They Follow
+People I Follow
+
+<%= button_to "logout", logout_path, "method" => :delete %></br>
+<%= button_to "delete", current_user, "method" => :delete %>
