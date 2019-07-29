@@ -14,4 +14,6 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_follows, source: :follower
 
   has_secure_password
+
+  validates :username, uniqueness: true
 end
