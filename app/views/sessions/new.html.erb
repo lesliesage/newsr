@@ -1,0 +1,16 @@
+<h1>Please login!</h1>
+
+
+
+<%= form_tag "/login" do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    <%= label_tag :password%>
+    <%=text_field_tag :password%>
+    <%= submit_tag "Login" %>
+
+<% end %>
+<br>
+<br>
+<br>
+<%=link_to "Click Here to Sign Up!", new_user_path %>
