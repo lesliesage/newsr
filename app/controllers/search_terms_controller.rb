@@ -1,0 +1,3 @@
+class SearchTermsController < ApplicationController
+
+end
