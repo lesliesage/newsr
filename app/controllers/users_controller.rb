@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         @current_user
         @current_firstname
         @current_username
+        @search = Search.new
         render 'homepage'
     end
 

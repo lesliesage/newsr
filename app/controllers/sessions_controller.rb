@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
 
     def create
       @user = User.find_by(username: params[:username])
-      if @user && @user.authenticate(params[:passwordç])
+      if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
           redirect_to '/'
       else
-        flash[:notice] = "invalid credentials" #use in an error div
+          flash[:notice] = "invalid credentials" #use in an error div
           render :new
       end
     end

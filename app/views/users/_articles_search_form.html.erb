@@ -1,0 +1,7 @@
+<%= form_for @search do |f| %>
+  <%= f.label "Search for: " %><br>
+  <%= f.text_field :original_text %><br>
+  <%= f.label "on this date: " %><br>
+  <%= f.date_field :search_date %><br>
+  <%= f.submit %>
+<% end %>
