@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   resources :articles
   root 'users#homepage'
   get 'signup', to: 'users#new'
+  get 'users/search', to: 'users#show_search', as: 'print_users_search'
+  post 'users/search', to: 'users#search', as: 'users_search'
   get 'users/:id', to: 'users#show', as: 'user'
   resources :users
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

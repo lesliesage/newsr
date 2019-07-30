@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy]
+    helper_method :user_search_results
 
     def new
         @user = User.new
@@ -26,8 +27,6 @@ class UsersController < ApplicationController
 
     def show
         if current_user
-
-        # needs to show searched-for user, not logged in user
             @user = User.find(params[:id])
         else
           redirect_to '/login'
@@ -41,6 +40,18 @@ class UsersController < ApplicationController
     def update
 
         current_user.update()
+    end
+
+    def show_search
+        render :search
+    end
+
+    def search
+        q = params[:q].downcase.strip
+        @users = User.all.select do |user|
+          user.first_name.downcase.include?(q) || user.last_name.downcase.include?(q) || user.username.downcase.include?(q)
+        end
+        render :search
     end
 
     def destroy
@@ -57,5 +68,4 @@ class UsersController < ApplicationController
     def require_login
         return head(:forbidden) unless session.include? :user_id
     end
-
 end
