@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
     def show
         if current_user
+
         # needs to show searched-for user, not logged in user
             @user = User.find(params[:id])
         else
@@ -38,6 +39,11 @@ class UsersController < ApplicationController
 
     end
 
+    def update
+
+        current_user.update()
+    end
+
     def destroy
       current_user.destroy
       redirect_to '/signup'
@@ -46,7 +52,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password, :username, :private?)
+        params.require(:user).permit(:first_name, :last_name, :password, :username, :private?, :articles => [])
     end
 
     def require_login
