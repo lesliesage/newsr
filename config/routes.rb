@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   resources :follows
   resources :searches
+  delete 'favorites/:id', to: 'favorites#destroy', as: 'favorite_delete'
   resources :favorites
   resources :search_terms
   resources :articles
