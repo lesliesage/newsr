@@ -1,12 +1,16 @@
-User homepage
+
 
 <h1>Welcome <%= current_firstname %>!</h1>
 
 
-Search Bar
+Search Bar<br> <br>
 
 Favorited Articles
-
+<ul>
+<%current_user.articles.each do |article|%>
+<li><%=link_to article.title, article_path(article)%></li>
+<%end%>
+</ul>
 People I Follow
 
 <%= button_to "logout", logout_path, "method" => :delete %></br>

@@ -1,5 +1,19 @@
-Article Title as link
-Article Image
-Article Blurb
+<h1><%=link_to @article.title, @article.url%></h1>
 
-People who have favorited it
+
+
+
+<img src="<%=@article.img_url%>" alt="<%=@article.title%>" width="500">
+
+
+
+
+<h3><%= @article.blurb%></h3>
+
+
+
+<h3>People who have favorited this article</h3>
+
+<%@article.users.each do |user|%>
+<li><%=link_to user.username, user_path%></li>
+<%end%>
