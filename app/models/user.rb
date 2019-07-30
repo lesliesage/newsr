@@ -6,8 +6,8 @@ class User < ApplicationRecord
   has_many :search_terms, through: :searches
 
   # They're following many people:
-  has_many :folowee_follows, foreign_key: :follower_id, class_name: "Follow"
-  has_many :folowees, through: :followee_follows, source: :followee
+  has_many :followee_follows, foreign_key: :follower_id, class_name: "Follow"
+  has_many :followees, through: :followee_follows, source: :followee
 
   # They're followed by many people:
   has_many :follower_follows, foreign_key: :followee_id, class_name: "Follow"

@@ -6,14 +6,23 @@ Button to follow user
 
 
 
-Favorited Articles
-<%=form_for current_user do |f|%>
+<h3>Favorited Articles</h3>
+<%= form_tag(favorites_path) do %>
+<% @user.articles.each do |article| %>
+    <div>
+        <%= check_box_tag 'favorite[article_ids][]', article.id,
+          current_user.articles.include?(article) %>
+        <a href="<%= article_path(article) %>"><%= article.title %></a>
+    </div>
+    <% end %>
+<%= submit_tag "Update your favorited articles" %>
+<% end %>
+<br>
 
-<%=f.collection_check_boxes :articles, @user.articles, :id, :title%>
+<h3>People <%= @user.username %> Follows</h3>
 
-<%=f.submit%>
-<%end%>
-
-People They Follow
-
-
+<ul>
+  <% @user.followees.each do |followee| %>
+    <li><%= link_to followee.username, user_path(followee) %></li>
+  <% end %>
+</ul>

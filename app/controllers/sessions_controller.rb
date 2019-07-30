@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+before_action :authorized, only: [:destroy]
     def new
     end
 

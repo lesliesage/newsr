@@ -10,9 +10,9 @@
   </head>
 
   <body>
-  <%= link_to "Homepage", root_path%>
-
-
+    <% if current_user %>
+      <p><%= link_to "Homepage", root_path%> *** You are logged in as: <%= current_username %> <%= button_to "logout", logout_path, "method" => :delete %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
