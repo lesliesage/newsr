@@ -1,6 +1,6 @@
 User.destroy_all
 Article.destroy_all
-SearchTerm.destroy_all
+
 Favorite.destroy_all
 Follow.destroy_all
 Search.destroy_all
@@ -43,14 +43,7 @@ a8 = Article.create(title: "Ex-UN chief Ban Ki-moon says US healthcare system is
                     url: "https://www.theguardian.com/us-news/2018/sep/25/ex-un-chief-ban-kioon-says-us-healthcare-system-is-morally-wrong",
                     img_url: "https://i.guim.co.uk/img/media/52a4272289700c42dd60dd78cca1d8983010179b/0_84_5410_3246/master/5410.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=07512ed214739cdff6c0de3830f739d8")
 
-t1 = SearchTerm.create(search_text: "california")
-t2 = SearchTerm.create(search_text: "teacher")
-t3 = SearchTerm.create(search_text: "school")
-t4 = SearchTerm.create(search_text: "nyc")
-t5 = SearchTerm.create(search_text: "cyclist")
-t6 = SearchTerm.create(search_text: "healthcare")
-t7 = SearchTerm.create(search_text: "biden")
-t8 = SearchTerm.create(search_text: "climate")
+
 
 Favorite.create(user_id: u1.id, article_id: a1.id)
 Favorite.create(user_id: u1.id, article_id: a2.id)
@@ -77,21 +70,21 @@ Follow.create(follower_id: u4.id, followee_id: u1.id)
 Follow.create(follower_id: u4.id, followee_id: u2.id)
 Follow.create(follower_id: u4.id, followee_id: u3.id)
 
-Search.create(original_text: "california stuff", search_term_id: t1.id)
-Search.create(original_text: "california quakes", search_term_id: t1.id)
-Search.create(original_text: "teacher news", search_term_id: t2.id)
-Search.create(original_text: "news about teachers", search_term_id: t2.id)
-Search.create(original_text: "school updates", search_term_id: t3.id)
-Search.create(original_text: "school shooting", search_term_id: t3.id)
-Search.create(original_text: "nyc news", search_term_id: t4.id)
-Search.create(original_text: "nyc", search_term_id: t4.id)
-Search.create(original_text: "cyclist", search_term_id: t5.id)
-Search.create(original_text: "healthcare and me", search_term_id: t6.id)
-Search.create(original_text: "healthcare policy", search_term_id: t6.id)
-Search.create(original_text: "healthcare in the elections", search_term_id: t6.id)
-Search.create(original_text: "do I have healthcare", search_term_id: t6.id)
-Search.create(original_text: "biden primary", search_term_id: t7.id)
-Search.create(original_text: "biden harris warren", search_term_id: t7.id)
-Search.create(original_text: "climate change", search_term_id: t8.id)
-Search.create(original_text: "climate hoax", search_term_id: t8.id)
-Search.create(original_text: "climate science", search_term_id: t8.id)
+Search.create(original_text: "california stuff")
+Search.create(original_text: "california quakes")
+Search.create(original_text: "teacher news")
+Search.create(original_text: "news about teachers")
+Search.create(original_text: "school updates")
+Search.create(original_text: "school shooting")
+Search.create(original_text: "nyc news")
+Search.create(original_text: "nyc")
+Search.create(original_text: "cyclist")
+Search.create(original_text: "healthcare and me")
+Search.create(original_text: "healthcare policy")
+Search.create(original_text: "healthcare in the elections")
+Search.create(original_text: "do I have healthcare")
+Search.create(original_text: "biden primary")
+Search.create(original_text: "biden harris warren")
+Search.create(original_text: "climate change")
+Search.create(original_text: "climate hoax")
+Search.create(original_text: "climate science")

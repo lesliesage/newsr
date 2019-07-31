@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :searches
   delete 'favorites/:id', to: 'favorites#destroy', as: 'favorite_delete'
   resources :favorites
-  resources :search_terms
   resources :articles
   root 'users#homepage'
   get 'signup', to: 'users#new'

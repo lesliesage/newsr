@@ -1,5 +1,4 @@
 class Search < ApplicationRecord
-  belongs_to :search_term
   # require 'open-uri'
   # url = 'https://newsapi.org/v2/everything?'\
   #       'q=Apple&'\
@@ -10,6 +9,8 @@ class Search < ApplicationRecord
   # response_body = req.read
   # puts response_body
   # url = https://newsapi.org/v2/everything?q=Apple&from=2019-07-30&sortBy=popularity&apiKey=
+  
+
 
   def format_terms(search_entered)
     search_entered.gsub(" ","%20")
@@ -25,5 +26,6 @@ class Search < ApplicationRecord
   def print_article
 
   end
+
 
 end
