@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show', as: 'user'
   resources :users
   get '/stats', to: 'application#stats'
+  post '/results', to: 'favorites#create_and_save'
 
 end

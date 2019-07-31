@@ -1,15 +1,13 @@
-Search Results
-<br>
-<br>
+<h1>Search Results</h1>
+<%= form_tag(results_path) do %>
+<% @articles.each do |article| %>
 
-
-<ul>
-<%@articles.each do |article|%>
-<li><%= link_to article.title, article_path(article)%></li>
-<%end%>
-</ul><br>
+    <div>
+        <%= check_box_tag 'favorite[articles][]', article["title"],
+            !!current_user.articles.find_by(title: article["title"], url: article["url"]) %>
+        <a href="<%= article["url"] %>" target="_blank"><%= article["title"] %></a>
+    </div>
+    <% end %>
+    <%= submit_tag "Update your favorited articles" %>
+<% end %>
 <br>
-<br>
-<br>
-
-

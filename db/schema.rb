@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_07_31_163411) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "google_secret"
   end
 
 end
