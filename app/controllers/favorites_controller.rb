@@ -2,20 +2,33 @@ class FavoritesController < ApplicationController
     before_action :authorized
 
     def create
-        if create_single_fave
-        else
+        if create_single_fave.id.nil?
             current_user.articles = []
-            favorite_params[:article_ids].each do |id|
+            favorite_params[:article_ids].each {|id|
                 current_user.articles << Article.find(id)
-
-            end
-            redirect_to article_path
+            }
+            redirect_to user_path(params[:id])
+        else
+            redirect_to article_path(single_favorite_params[:article_id])
         end
     end
 
+
+
+
+    #     if !create_single_fave.id.nil?
+    #         redirect_to article_path(single_favorite_params[:article_id])
+    #     else
+    #         current_user.articles = []
+    #         favorite_params[:article_ids].each do |id|
+    #             current_user.articles << Article.find(id)
+    #         end
+    #         redirect_to user_path(params[:id])
+    #     end
+    # end
+
     def create_single_fave
-           Favorite.find_or_create_by(user_id: current_user.id, article_id: single_favorite_params[:article_id])
-           redirect_to article_path(single_favorite_params[:article_id])
+        Favorite.find_or_create_by(user_id: current_user.id, article_id: single_favorite_params[:article_id])
     end
 
 

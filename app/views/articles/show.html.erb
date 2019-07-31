@@ -1,28 +1,19 @@
 <h1><%=link_to @article.title, @article.url%></h1>
 
-
-
+<%if current_user.articles.include?(@article) %>
+<%= button_to "Unfavorite Article", favorite_delete_path, "method" => :delete %>
+<%else%>
+<%= button_to "Favorite Article", '/favorites', params: {:favorite => {article_id: @article.id}}%>
+<%end%>
+<br>
+<br>
 
 <img src="<%=@article.img_url%>" alt="<%=@article.title%>" width="500">
 
-
-
-
 <h3><%= @article.blurb%></h3>
-
-
 
 <h3>People who have favorited this article</h3>
 
 <%@article.users.each do |user|%>
 <li><%=link_to user.username, user_path(user)%></li>
-<%end%>
-
-<br>
-<br>
-<br>
-<%if current_user.articles.include?(@article) %>
-<%= button_to "Unfavorite Article", favorite_delete_path, "method" => :delete %>
-<%else%>
-<%= button_to "Favorite Article", '/favorites', params: {:favorite => {article_id: @article.id}}%>
 <%end%>

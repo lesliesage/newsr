@@ -6,9 +6,9 @@
     <%= button_to "Follow User", '/follows', params: {:follow => {followee_id: @user.id}}%>
 <%end%>
 
-
 <h3>Favorited Articles</h3>
 <%= form_tag(favorites_path) do %>
+<%= hidden_field_tag :id, @user.id %>
 <% @user.articles.each do |article| %>
     <div>
         <%= check_box_tag 'favorite[article_ids][]', article.id,
