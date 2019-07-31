@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   post 'users/search', to: 'users#search', as: 'users_search'
   get 'users/:id', to: 'users#show', as: 'user'
   resources :users
+  get '/stats', to: 'application#stats'
 
 end
