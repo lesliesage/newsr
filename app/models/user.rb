@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_follows, source: :follower
 
   has_secure_password
-
   validates :username, uniqueness: true
-
+  acts_as_google_authenticated :column_name => :username
+  acts_as_google_authenticated :lookup_token => :salt
 end

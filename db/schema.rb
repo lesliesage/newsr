@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_163739) do
+ActiveRecord::Schema.define(version: 2019_07_31_010028) do
 
   create_table "articles", force: :cascade do |t|
     t.text "title"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_163739) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "google_secret"
   end
 
 end
