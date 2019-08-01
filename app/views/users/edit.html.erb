@@ -1,11 +1,8 @@
 <h1>Edit Your Profile Here</h1>
 
 <% if @test_user && @test_user.errors.any? %>
-    <% @test_user.errors.full_messages.each do |msg| %>
-        <%= msg %><br>
-    <% end %>
+    <h3><%= @test_user.errors.full_messages.first %><h3>
 <% end %>
+<br>
 
-<br>
 <%= render 'user_information_form' %>
-<br>

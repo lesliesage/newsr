@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-
     before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy]
     helper_method :user_search_results
-
 
     def new
         @user = User.new
@@ -10,12 +8,10 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-
         if @user.save
             @user.set_google_secret
             # qr = RQRCode::QRCode.new(@user.google_secret_value )
             session[:user_id] = @user.id
-
             redirect_to '/'
         else
             redirect_to '/signup'
@@ -23,9 +19,6 @@ class UsersController < ApplicationController
     end
 
     qrcode = RQRCode::QRCode.new("http://github.com/")
-
-
-
 
     def homepage
         # @qr = RQRCode::QRCode.new(current_user.google_secret_value, :size => 4, :level => :h )
@@ -39,7 +32,7 @@ class UsersController < ApplicationController
         render 'homepage'
     end
     #otpauth://totp/qrtester:?secret=hnjxvy23exa24sze&issuer=qrtester
-    
+
     def show
         if current_user
             if current_user.id.to_s == params[:id]
@@ -54,7 +47,6 @@ class UsersController < ApplicationController
 
     def edit
         @user = current_user
-
     end
 
     def update
