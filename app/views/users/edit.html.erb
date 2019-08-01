@@ -5,18 +5,16 @@
       <h2 class="text-white mb-4">Edit Your Profile</h2>
      
           <% if @test_user && @test_user.errors.any? %>
-              <h3><%= @test_user.errors.full_messages.first %><h3>
+      <h4 style="color: red" mb-2"><%= @test_user.errors.full_messages.first %></h4>
           <% end %>
-     
-        <%= render 'user_information_form' %>
-     
-     
+
+     <h2 class="text-black mb-4"><%= render 'user_information_form' %></h2>
       </div>
     </div>
 
 <br>
 
-<%= render 'user_information_form' %>
+<%#= render 'user_information_form' %>
 <br>
 <br>
 
