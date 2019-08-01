@@ -40,7 +40,9 @@
                   <a class="nav-link js-scroll-trigger" href="<%= '/users/search' %>">Find Other Users</a>
                 </li>
                 <li class="nav-item">
+                <%if current_user%>
                   <a class="nav-link js-scroll-trigger" href="<%= edit_user_path(current_user) %>"><%= current_username %></a>
+                <%end%>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="<%= logout_path %>" data-method="delete">Logout</a>

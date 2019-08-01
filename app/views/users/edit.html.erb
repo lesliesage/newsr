@@ -1,12 +1,22 @@
-<h1>Edit Your Profile Here</h1>
+<section id="about" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+      <h2 class="text-white mb-4">Edit Your Profile</h2>
+     
+          <% if @test_user && @test_user.errors.any? %>
+              <h3><%= @test_user.errors.full_messages.first %><h3>
+          <% end %>
+     
+        <%= render 'user_information_form' %>
+     
+     
+      </div>
+    </div>
 
-<% if @test_user && @test_user.errors.any? %>
-    <h3><%= @test_user.errors.full_messages.first %><h3>
-<% end %>
 <br>
 
 <%= render 'user_information_form' %>
 <br>
 <br>
 
-<%= button_to "DELETE User", current_user, "method" => :delete %>
