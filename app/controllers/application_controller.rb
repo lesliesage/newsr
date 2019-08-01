@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :current_firstname
@@ -6,7 +7,9 @@ class ApplicationController < ActionController::Base
     helper_method :most_popular_user
     helper_method :most_popular_search_term
     helper_method :most_prolific_friender
-    # before_filter :check_mfaa.sal
+    require 'rqrcode_core'
+    require 'rqrcode_core'
+
 
     def current_user
         current_user = User.find_by(id: session[:user_id])
@@ -56,6 +59,10 @@ class ApplicationController < ActionController::Base
     def stats
         render :stats
     end
+
+
+
+
 
 
 

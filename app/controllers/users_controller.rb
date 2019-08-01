@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+    require 'rqrcode_core'
+    require 'rqrcode'
     before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy]
     helper_method :user_search_results
+
 
     def new
         @user = User.new
@@ -11,7 +14,9 @@ class UsersController < ApplicationController
         
         if @user.save
             @user.set_google_secret
+            # qr = RQRCode::QRCode.new(@user.google_secret_value )
             session[:user_id] = @user.id
+
             redirect_to '/'
         else
             redirect_to '/signup'
@@ -19,6 +24,9 @@ class UsersController < ApplicationController
     end
 
     def homepage
+        # @qr = RQRCode::QRCode.new(current_user.google_secret_value, :size => 4, :level => :h )
+        # @qr = RQRCode::QRCode.new("http://codingricky.com").to_img.resize(200, 200).to_data_url
+        @qr = RQRCodeCore::QRCode.new('my string to generate', size: 4, level: :h)
         @current_user
         @current_firstname
         @current_username
