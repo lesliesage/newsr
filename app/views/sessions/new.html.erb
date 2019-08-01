@@ -1,22 +1,38 @@
-<h1>Please login!</h1>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<%= form_tag "/login" do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password%>
-    <%=password_field_tag :password%>
-    <%= label_tag "Authenticator Password"%>
-    <%=password_field_tag :authenticator_code%>
-    <%= submit_tag "Login" %>
-<% end %>
-<br>
-<br>
-<br>
-<%=link_to "Click Here to Sign Up!", '/signup' %>
+<header class="masthead">
+  <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+      <h1 class="mx-auto my-0">Please Login</h1>
+      <br>
+      <br>
+      <br>
+      <%= form_tag "/login" do %>
+          <%= label_tag :username %><br>
+          <%= text_field_tag :username %><br>
+          <%= label_tag :password%><br>
+          <%=password_field_tag :password%><br>
+          <%= label_tag "Authention Code"%><br>
+          <%=password_field_tag :authenticator_code%><br>
+          <%= submit_tag "Login" %>
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="/signup" class="btn btn-primary js-scroll-trigger">Or Click Here to Sign Up</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</header>
