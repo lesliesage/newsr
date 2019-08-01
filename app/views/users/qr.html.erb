@@ -1,0 +1,13 @@
+<h1>Security</h1>
+
+<p>This site requires 2-factor authentication.
+Download Google Authenticator where you get your smartphone apps.
+Click the "+" button at the bottom and scan the barcode to add Newsr to your authentication options.
+On future logins, open the app to find your authentication code.
+</p>
+<br>
+<%= raw @qr.as_svg(offset: 0, color: '000',
+                    shape_rendering: 'crispEdges',
+                    module_size: 3)%>
+<br>
+<h2><%= link_to "Go to the homepage", root_path %></h2>

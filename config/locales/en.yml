@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+
+en:
+  activerecord:
+    attributes:
+      search:
+        original_text: "Search terms"
+    errors:
+      models:
+        search:
+          attributes:
+            original_text:
+              blank: "are required."

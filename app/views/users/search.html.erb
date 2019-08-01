@@ -1,23 +1,19 @@
-Search for other users to friend
-
-Returns in same place as links to profiles
-
-
+<h1>Search for other users to friend</h1>
 
 <%= form_tag(users_search_path, method: "post") do %>
-  <%= label_tag(:q, "Search for other users: ") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+    <%= label_tag(:q, "Search for other users: ") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
 <% end %>
 
 <% if !@users.nil? %>
-  <% if @users.empty? %>
-    No results found
-  <% else %>
-  <ul>
-    <% @users.each do |user| %>
-      <li><%= link_to user.username, user_path(user) %></li>
+    <% if @users.empty? %>
+        <p>No results found</p>
+    <% else %>
+        <ul>
+            <% @users.each do |user| %>
+                <li><%= link_to user.username, user_path(user) %></li>
+            <% end %>
+        </ul>
     <% end %>
-  </ul>
-  <% end %>
 <% end %>

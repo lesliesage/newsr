@@ -49,7 +49,6 @@ class FavoritesController < ApplicationController
         redirect_to root_path
     end
 
-
     def destroy
         @article = Article.find(params[:id])
         Favorite.find_by(user_id: current_user.id, article_id: @article.id).destroy
@@ -63,7 +62,7 @@ class FavoritesController < ApplicationController
     end
 
     def favorite_params
-      params.require(:favorite).permit(article_ids: [])
+        params.require(:favorite).permit(article_ids: [])
     end
 
     def new_articles_params

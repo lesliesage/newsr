@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :users
   get '/stats', to: 'application#stats'
   post '/results', to: 'favorites#create_and_save'
-
+  get '/qr', to: 'users#qr_page'
 end

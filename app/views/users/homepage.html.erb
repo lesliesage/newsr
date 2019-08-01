@@ -4,34 +4,27 @@
     <% @search.errors.full_messages.each do |msg| %>
         <%= msg %><br>
     <% end %>
+    <br>
 <% end %>
 
-<br>
 <%= render :partial => "users/articles_search_form" %>
 <br>
 
-<h3>Favorited Articles</h3>
-<ul>
-    <% current_user.articles.each do |article| %>
-        <li><%= link_to article.title, article_path(article) %></li>
-    <% end %>
-</ul>
-
-
- <% if !@qr.nil? %>
- <%= raw @qr.as_svg(offset: 0, color: '000', 
-                    shape_rendering: 'crispEdges', 
-                    module_size: 3)%>
+<% if current_user.articles.count > 0 %>
+    <h3>Favorited Articles</h3>
+    <ul>
+        <% current_user.articles.each do |article| %>
+            <li><%= link_to article.title, article_path(article) %></li>
+        <% end %>
+    </ul>
 <% end %>
 
-
-<h3>People I Follow</h3>
-<ul>
-  <% current_user.followees.each do |followee| %>
-    <li><%= link_to followee.username, user_path(followee) %></li>
-  <% end %>
-</ul>
-<br>
-<%= button_to "Edit Profile", edit_user_path(current_user), "method" => :get %></br>
-<%= button_to "Logout", logout_path, "method" => :delete %></br>
-<%= button_to "DELETE User", current_user, "method" => :delete %>
+<% if current_user.followees.count > 0 %>
+    <h3>People I Follow</h3>
+    <ul>
+        <% current_user.followees.each do |followee| %>
+            <li><%= link_to followee.username, user_path(followee) %></li>
+        <% end %>
+    </ul>
+    <br>
+<% end %>

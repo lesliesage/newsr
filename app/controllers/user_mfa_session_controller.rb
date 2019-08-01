@@ -3,7 +3,7 @@ class UserMfaSessionController < ApplicationController
     def new
       # load your view
     end
-  
+
     def create
       user = current_user # grab your currently logged in user
       if user.google_authentic?(params[:mfa_code])
@@ -14,5 +14,5 @@ class UserMfaSessionController < ApplicationController
         render :new
       end
     end
-  
+
   end
