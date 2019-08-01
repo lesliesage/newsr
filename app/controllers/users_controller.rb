@@ -59,6 +59,8 @@ class UsersController < ApplicationController
         if current_user.update(user_params)
             redirect_to root_path
         else
+            @user = current_user
+            @test_user = User.create(user_params)
             render :edit
         end
     end
