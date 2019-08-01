@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        
+
         if @user.save
             @user.set_google_secret
             # qr = RQRCode::QRCode.new(@user.google_secret_value )
@@ -23,8 +23,8 @@ class UsersController < ApplicationController
     end
 
     qrcode = RQRCode::QRCode.new("http://github.com/")
-    
-    
+
+
 
 
     def homepage
@@ -56,17 +56,11 @@ class UsersController < ApplicationController
     end
 
     def update
-        ######the 'private?' param is coming in as 'private'
-        ###### validates_with may work if you try validating for uniqueness if username! = current user
-        # @user = User.new(user_params)
-        # if @user.valid?
-        # current_user.update(user_params)
-        # redirect_to root_path
-        # else
-        #     render :edit
-        # end
-        current_user.update(user_params)
-        redirect_to root_path
+        if current_user.update(user_params)
+            redirect_to root_path
+        else
+            render :edit
+        end
     end
 
     def show_search
@@ -89,7 +83,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password, :username, :private, :articles => [])
+        params.require(:user).permit(:first_name, :last_name, :password, :username, :articles => [])
     end
 
     def require_login
