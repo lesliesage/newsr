@@ -4,7 +4,7 @@
     <div class="mx-auto text-center">
       <h1 class="mx-auto my-0 text-uppercase">Welcome <%= current_firstname %></h1>
       <h2 class="text-white-50 mx-auto mt-2 mb-5">The smart news hub for smart people.</h2>
-      <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
+      <a href="#about" class="btn btn-primary js-scroll-trigger">Start Searching</a>
     </div>
   </div>
 </header>
@@ -19,7 +19,6 @@
 <%= render :partial => "users/articles_search_form" %>
 <br>
 
-
 <!-- Favorited Articles Section -->
 <section id="about" class="about-section text-center">
   <div class="container">
@@ -33,16 +32,21 @@
         <% end %>
       </div>
     </div>
-    <img src="http://blackrockdigital.github.io/startbootstrap-grayscale/img/ipad.png" class="img-fluid" alt="">
   </div>
 </section>
 
-<% if current_user.followees.count > 0 %>
-    <h3>People I Follow</h3>
-    <ul>
-        <% current_user.followees.each do |followee| %>
-            <li><%= link_to followee.username, user_path(followee) %></li>
+<!-- People I Follow Section -->
+<section id="about" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-white mb-4">People I Follow</h2>
+          <% if current_user.followees.count > 0 %>
+          <% current_user.followees.each do |followee| %>
+          <p class="text-white-50"><%= link_to followee.username, user_path(followee) %></p>
+          <% end %>
         <% end %>
-    </ul>
-    <br>
-<% end %>
+      </div>
+    </div>
+  </div>
+</section>
