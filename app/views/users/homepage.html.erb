@@ -1,7 +1,13 @@
 <h1>Welcome <%= current_firstname %>!</h1>
 
+<% if @search.errors.any? %>
+    <% @search.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+<% end %>
+
 <br>
-<%= render "articles_search_form" %>
+<%= render :partial => "users/articles_search_form" %>
 <br>
 
 <h3>Favorited Articles</h3>
@@ -12,11 +18,11 @@
 </ul>
 
 
-
+ <% if !@qr.nil? %>
  <%= raw @qr.as_svg(offset: 0, color: '000', 
                     shape_rendering: 'crispEdges', 
                     module_size: 3)%>
-
+<% end %>
 
 
 <h3>People I Follow</h3>
