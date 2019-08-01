@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_010028) do
+ActiveRecord::Schema.define(version: 2019_07_31_163411) do
 
   create_table "articles", force: :cascade do |t|
     t.text "title"
@@ -35,15 +35,8 @@ ActiveRecord::Schema.define(version: 2019_07_31_010028) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "search_terms", force: :cascade do |t|
-    t.string "search_text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.string "original_text"
-    t.integer "search_term_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "search_date"

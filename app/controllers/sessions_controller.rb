@@ -5,7 +5,7 @@ before_action :authorized, only: [:destroy]
 
     def create
       @user = User.find_by(username: params[:username])
-      if @user && @user.authenticate(params[:password])
+      if @user && @user.authenticate(params[:password]) && @user.google_authentic?(123456)
           session[:user_id] = @user.id
           redirect_to '/'
       else

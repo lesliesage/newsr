@@ -1,0 +1,24 @@
+<h1>Newsr Stats</h1>
+
+<table style="width:60%">
+  <tr>
+    <th>Superlative</th>
+    <th>Current Champ</th>
+  </tr>
+  <tr>
+    <td>Most popular article: </td>
+    <td><%= link_to most_popular_article.title, most_popular_article %></td>
+  </tr>
+  <tr>
+    <td>Most popular user: </td>
+    <td><%= link_to most_popular_user.username, most_popular_user %></td>
+  </tr>
+  <tr>
+    <td>Most popular search: </td>
+    <td><%= most_popular_search_term %></td>
+  </tr>
+  <tr>
+    <td>Most prolific friender: </td>
+    <td><%= link_to most_prolific_friender.username, most_prolific_friender %></td>
+  </tr>
+</table>
