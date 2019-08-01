@@ -44,7 +44,8 @@ class UsersController < ApplicationController
     end
 
     def update
-           #the 'private?' param is coming in as 'private'
+        ######the 'private?' param is coming in as 'private'
+        ###### validates_with may work if you try validating for uniqueness if username! = current user
         # @user = User.new(user_params)
         # if @user.valid?
         # current_user.update(user_params)
