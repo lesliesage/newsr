@@ -28,7 +28,11 @@ class UsersController < ApplicationController
 
     def show
         if current_user
-            @user = User.find(params[:id])
+            if current_user.id.to_s == params[:id]
+                redirect_to root_path
+            else
+                @user = User.find(params[:id])
+            end
         else
           redirect_to '/login'
         end
