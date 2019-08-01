@@ -9,6 +9,10 @@ u1 = User.create(first_name: "Bob", last_name: "Brown", username: "bob123", priv
 u2 = User.create(first_name: "Jane", last_name: "Johnson", username: "jane123", private?: false, password: "asd")
 u3 = User.create(first_name: "Sally", last_name: "Smith", username: "sally123", private?: false, password: "asd")
 u4 = User.create(first_name: "Walter", last_name: "Williams", username: "walter123", private?: true, password: "123")
+u1.set_google_secret
+u2.set_google_secret
+u3.set_google_secret
+u4.set_google_secret
 
 a1 = Article.create(title: "California quakes drive emergency supply sales",
                     blurb: "Nothing prompts people to prepare for a natural disaster like a brush with one, a truism reinforced when a pair of earthquakes rattled southern California this month.",
