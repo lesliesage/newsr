@@ -3,9 +3,26 @@ class FavoritesController < ApplicationController
 
     def create
         if create_single_fave.id.nil?
+            # store the current users set of faves
+            starting_faves = []
+            current_user.articles.each {|article|
+                starting_faves << article
+            }
+            # delete the current users' faves
             current_user.articles = []
+            # store all the articles presented to current user on another user's page
+            presented_faves = User.find(params[:id]).articles
+            # make an empty array to store the user's selections from that page
+            selected_faves = []
+            # put their selections into that array
             favorite_params[:article_ids].each {|id|
-                current_user.articles << Article.find(id)
+                selected_faves << Article.find(id)
+            }
+            # the current user's faves should be:
+            final_set_of_faves = (starting_faves - presented_faves) | selected_faves
+            # shovel each fave into current_user.articles
+            final_set_of_faves.each {|fave|
+                current_user.articles << fave
             }
             redirect_to user_path(params[:id])
         else
