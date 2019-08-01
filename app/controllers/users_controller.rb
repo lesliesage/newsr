@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         # @qr = RQRCode::QRCode.new(current_user.google_secret_value, :size => 4, :level => :h )
         # @qr = RQRCode::QRCode.new("http://codingricky.com").to_img.resize(200, 200).to_data_url
         #@qr = RQRCode::QRCode.new("https://chart.googleapis.com/chart?cht=qr&chl=otpauth%3A%2F%2Ftotp%2Fqrtester%3Fsecret%3Dhnjxvy23exa24sze&chs=200x200", :size => 10, :level => :h )
-        @qr = RQRCode::QRCode.new("otpauth://totp/qrtester:?secret=#{current_user.google_secret_value}&issuer=#{current_user.google_label}")
+        @qr = RQRCode::QRCode.new("otpauth://totp/Newsr?secret=#{current_user.google_secret_value}")
         @current_user
         @current_firstname
         @current_username
