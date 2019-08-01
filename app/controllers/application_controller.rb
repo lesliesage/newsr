@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     helper_method :most_popular_search_term
     helper_method :most_prolific_friender
     require 'rqrcode_core'
-    require 'rqrcode_core'
+    require 'rqrcode'
+
 
 
     def current_user
