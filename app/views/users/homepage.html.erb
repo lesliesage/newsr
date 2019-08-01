@@ -17,6 +17,7 @@
     <li><%= link_to followee.username, user_path(followee) %></li>
   <% end %>
 </ul>
-
+<br>
+<%= button_to "Edit Profile", edit_user_path(current_user), "method" => :get %></br>
 <%= button_to "Logout", logout_path, "method" => :delete %></br>
 <%= button_to "DELETE User", current_user, "method" => :delete %>

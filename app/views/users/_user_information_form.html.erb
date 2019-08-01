@@ -1,0 +1,13 @@
+<%= form_for @user do |f| %>
+<%=f.label "First Name"%><br>
+<%=f.text_field :first_name%><br>
+<%=f.label "Last Name"%><br>
+<%=f.text_field :last_name%><br>
+<%=f.label "Username"%><br>
+<%=f.text_field :username%><br>
+<%=f.label "Private?"%><br>
+<%=f.check_box :private %><br>
+<%=f.label"Password"%><br>
+<%=f.password_field :password%><br>
+<%=f.submit%><br>
+<% end %>

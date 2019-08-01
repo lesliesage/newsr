@@ -39,12 +39,14 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @user = current_user
 
     end
 
     def update
-
-        current_user.update()
+           #the 'private?' param is coming in as 'private'
+        current_user.update(user_params)
+        redirect_to root_path
     end
 
     def show_search
@@ -67,7 +69,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password, :username, :private?, :articles => [])
+        params.require(:user).permit(:first_name, :last_name, :password, :username, :private, :articles => [])
     end
 
     def require_login
