@@ -13,7 +13,9 @@
 
 
 
- <%= raw @qr.as_html%>
+ <%= raw @qr.as_svg(offset: 0, color: '000', 
+                    shape_rendering: 'crispEdges', 
+                    module_size: 3)%>
 
 
 
