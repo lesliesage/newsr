@@ -7,14 +7,19 @@ class SearchesController < ApplicationController
   end
 
   def create
-      @search = Search.create(search_params)
-      @search_terms = scrubbed(search_params[:original_text])
-      @search_date = search_params[:search_date]
-      @articles = articles_hash(@search_terms, @search_date)
-      @user = params[:id]
-      session[:search_terms] = @search_terms
-      session[:search_date] = @search_date
-      render :results
+      @search = Search.new(search_params)
+      if @search.valid?
+          @search.save
+          @search_terms = scrubbed(search_params[:original_text])
+          @search_date = search_params[:search_date]
+          @articles = articles_hash(@search_terms, @search_date)
+          @user = params[:id]
+          session[:search_terms] = @search_terms
+          session[:search_date] = @search_date
+          render :results
+      else
+          render 'users/homepage' # <-- specify folder/view when rendering view in another directory
+      end
   end
 
   private
