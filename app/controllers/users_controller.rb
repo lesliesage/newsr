@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    require 'rqrcode_core'
-    require 'rqrcode'
+
     before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy]
     helper_method :user_search_results
 
@@ -23,10 +22,15 @@ class UsersController < ApplicationController
         end
     end
 
+    qrcode = RQRCode::QRCode.new("http://github.com/")
+    
+    
+
+
     def homepage
         # @qr = RQRCode::QRCode.new(current_user.google_secret_value, :size => 4, :level => :h )
         # @qr = RQRCode::QRCode.new("http://codingricky.com").to_img.resize(200, 200).to_data_url
-        @qr = RQRCodeCore::QRCode.new('my string to generate', size: 4, level: :h)
+        @qr = RQRCode::QRCode.new( 'https://github.com/whomwah/rqrcode', :size => 4, :level => :h )
         @current_user
         @current_firstname
         @current_username
