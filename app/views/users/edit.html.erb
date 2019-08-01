@@ -2,19 +2,21 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-      <h2 class="text-white mb-4">Edit Your Profile</h2>
-     
+        <h2 class="text-white mb-4">Edit Your Profile</h2>
+          <br>
           <% if @test_user && @test_user.errors.any? %>
-      <h4 style="color: red" mb-2"><%= @test_user.errors.full_messages.first %></h4>
+            <h4 style="color: red" mb-2"><%= @test_user.errors.full_messages.first %></h4>
           <% end %>
-
-     <h2 class="text-black mb-4"><%= render 'user_information_form' %></h2>
+        <h2 class="text-black mb-4"><%= render 'user_information_form' %></h2>
       </div>
     </div>
-
-<br>
-
-<%#= render 'user_information_form' %>
-<br>
-<br>
-
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</section>

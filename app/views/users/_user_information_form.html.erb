@@ -1,13 +1,21 @@
-
-
-                              <%= form_for @user do |f| %>
- <h4 class="text-white mb-2"><%= f.label "First Name" %></h4>
-                              <%= f.text_field :first_name %><br><br>
-  <h4 class="text-white mb-2"><%= f.label "Last Name" %></h4>
-                              <%= f.text_field :last_name %><br><br>
-  <h4 class="text-white mb-2"><%= f.label "Username" %></h4>
-                              <%= f.text_field :username %><br><br>
-  <h4 class="text-white mb-2"><%= f.label"Password" %></h4>
-                              <%= f.password_field :password %><br><br>
-                              <%= f.submit %><br>
+<%= form_for @user do |f| %>
+    <h4 class="text-white mb-2"><%= f.label "First Name" %></h4>
+    <%= f.text_field :first_name %>
+    <br>
+    <br>
+    <h4 class="text-white mb-2"><%= f.label "Last Name" %></h4>
+    <%= f.text_field :last_name %>
+    <br>
+    <br>
+    <h4 class="text-white mb-2"><%= f.label "Username" %></h4>
+    <%= f.text_field :username %>
+    <br>
+    <br>
+    <h4 class="text-white mb-2">
+    <%= f.label"Password" %></h4>
+    <%= f.password_field :password %>
+    <br>
+    <br>
+    <br>
+    <%= f.submit %><br>
 <% end %>

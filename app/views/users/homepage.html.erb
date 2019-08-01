@@ -9,18 +9,27 @@
   </div>
 </header>
 
-<!-- Favorited Articles Section -->
-<% if @search.errors.any? %>
-    <% @search.errors.full_messages.each do |msg| %>
-        <%= msg %><br>
-    <% end %>
-    <br>
-<% end %>
+<!-- Search Section -->
 
-<%= render :partial => "users/articles_search_form" %>
-<br>
+<section id="about" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-white mb-4">Search for Articles</h2>
+          <br>
+          <% if @search.errors.any? %>
+            <% @search.errors.full_messages.each do |msg| %>
+              <h4 style="color: red" mb-2"><%= msg %></h4>
+            <% end %>
+          <% end %>
+        <h2 class="text-black mb-4"><%= render :partial => "users/articles_search_form" %></h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Favorited Articles Section -->
+
 <section id="about" class="about-section text-center">
   <div class="container">
     <div class="row">
@@ -28,9 +37,12 @@
         <h2 class="text-white mb-4">Favorited Articles</h2>
         <% if current_user.articles.count > 0 %>
           <% current_user.articles.each do |article| %>
-          <p class="text-white-50"><%= link_to article.title, article_path(article) %></p>
+          <h4 mb-2><%= link_to article.title, article_path(article) %></h4><br>
           <% end %>
         <% end %>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
   </div>
@@ -44,9 +56,12 @@
         <h2 class="text-white mb-4">People I Follow</h2>
           <% if current_user.followees.count > 0 %>
           <% current_user.followees.each do |followee| %>
-          <p class="text-white-50"><%= link_to followee.username, user_path(followee) %></p>
+          <h4 mb-2><%= link_to followee.username, user_path(followee) %></h4><br>
           <% end %>
         <% end %>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
   </div>

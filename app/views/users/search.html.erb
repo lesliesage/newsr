@@ -1,19 +1,62 @@
-<h1>Search for other users to friend</h1>
-
-<%= form_tag(users_search_path, method: "post") do %>
-    <%= label_tag(:q, "Search for other users: ") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-<% end %>
-
-<% if !@users.nil? %>
-    <% if @users.empty? %>
-        <p>No results found</p>
-    <% else %>
-        <ul>
+<section id="about" class="about-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-white mb-4">Search for other users to friend:</h2>
+        <br>
+        <%= form_tag(users_search_path, method: "post") do %>
+        <%= text_field_tag(:q) %>
+        <br>
+        <br>
+        <br>
+        <%= submit_tag("Search") %><br>
+        <% end %>
+        <br>
+        <br>
+        <% if !@users.nil? %>
+          <% if @users.empty? %>
+            <h4 style="color: red" mb-2">No results found</h4>
+          <% else %>
             <% @users.each do |user| %>
-                <li><%= link_to user.username, user_path(user) %></li>
+              <h4 mb-2><%= link_to user.username, user_path(user) %></h4>
             <% end %>
-        </ul>
-    <% end %>
-<% end %>
+          <% end %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</section>
