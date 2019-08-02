@@ -16,4 +16,11 @@ class User < ApplicationRecord
     validates :password, presence: true
     validates :username, uniqueness: true
     acts_as_google_authenticated :column_name => :username
+
+    def self.get_searched_users(pq)
+      q = pq.downcase.strip
+      self.all.select do |user|
+          user.first_name.downcase.include?(q) || user.last_name.downcase.include?(q) || user.username.downcase.include?(q)
+      end
+    end
 end

@@ -61,10 +61,7 @@ class UsersController < ApplicationController
     end
 
     def search
-        q = params[:q].downcase.strip
-        @users = User.all.select do |user|
-            user.first_name.downcase.include?(q) || user.last_name.downcase.include?(q) || user.username.downcase.include?(q)
-        end
+        @users = User.get_searched_users(params[:q])
         render :search
     end
 
