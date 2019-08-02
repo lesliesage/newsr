@@ -1,6 +1,10 @@
 class FavoritesController < ApplicationController
     before_action :authorized
 
+        def show
+        end
+
+
     def create
         if create_single_fave.id.nil?
             # store the current users set of faves
