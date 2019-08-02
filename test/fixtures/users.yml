@@ -4,12 +4,10 @@ one:
   first_name: MyString
   last_name: MyString
   username: MyString
-  private?: false
   password_digest: <%= BCrypt::Password.create('secret') %>
 
 two:
   first_name: MyString
   last_name: MyString
   username: MyString
-  private?: false
   password_digest: <%= BCrypt::Password.create('secret') %>

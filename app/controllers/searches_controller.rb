@@ -7,9 +7,8 @@ class SearchesController < ApplicationController
   end
 
   def index
-        redirect_to root_path
+      redirect_to root_path
   end
-
 
   def create
       @search = Search.new(search_params)
