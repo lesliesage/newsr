@@ -1,18 +1,22 @@
+<section id="about" class="about-section text-center">
 <h1><a href="<%= @article.url %>" target="_blank"><%= @article.title %></a></h1>
+<br>
+<br>
+
+<img src="<%= @article.img_url %>" alt="<%= @article.title %>" width="500">
+<br>
+<br>
+<br>
+<h4 class="text-white"><%= @article.blurb %><%= link_to "   Read More", @article.url%></h4>
 <% if current_user.articles.include?(@article) %>
     <%= button_to "Unfavorite Article", favorite_delete_path, "method" => :delete %>
 <% else %>
     <%= button_to "Favorite Article", '/favorites', params: {:favorite => {article_id: @article.id}} %>
 <% end %>
-<br>
-<br>
-
-<img src="<%= @article.img_url %>" alt="<%= @article.title %>" width="500">
-
-<h4><%= @article.blurb %></h4>
 
 <h2>People who have favorited this article</h2>
 
 <% @article.users.each do |user| %>
     <li><%= link_to user.username, user_path(user) %></li>
 <% end %>
+</section>

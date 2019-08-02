@@ -3,7 +3,7 @@
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
       <h1 class="mx-auto my-0 text-uppercase">Welcome <%= current_firstname %></h1>
-      <h2 class="text-white-50 mx-auto mt-2 mb-5">The smart news hub for smart people.</h2>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5">Newsr. The smart news hub for smart people.</h2>
       <a href="#about" class="btn btn-primary js-scroll-trigger">Start Searching</a>
     </div>
   </div>
@@ -19,7 +19,7 @@
           <br>
           <% if @search.errors.any? %>
             <% @search.errors.full_messages.each do |msg| %>
-              <h4 style="color: red" mb-2"><%= msg %></h4>
+              <h4 style="color: red" mb-2><%= msg %></h4>
             <% end %>
           <% end %>
         <h2 class="text-black mb-4"><%= render :partial => "users/articles_search_form" %></h2>

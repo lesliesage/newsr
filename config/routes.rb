@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get '/stats', to: 'application#stats'
   post '/results', to: 'favorites#create_and_save'
   get '/qr', to: 'users#qr_page'
+  get 'searches', to: 'users#homepage'
 end

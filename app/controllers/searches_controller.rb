@@ -6,6 +6,11 @@ class SearchesController < ApplicationController
       @search = Search.new
   end
 
+  def index
+        redirect_to root_path
+  end
+
+
   def create
       @search = Search.new(search_params)
       if @search.valid?

@@ -1,12 +1,15 @@
-<h1>Search Results</h1>
+<section id="about" class="about-section text-center">
+
+<h1 style=" color: rgba(255, 255, 255, 0.5)">Search Results</h1>
 <%= form_tag(results_path) do %>
 <% @articles.each do |article| %>
     <div>
-        <%= check_box_tag 'favorite[articles][]', article["title"],
+        <h4 mb-2><%= check_box_tag 'favorite[articles][]', article["title"],
             !!current_user.articles.find_by(title: article["title"], url: article["url"]) %>
-        <h4 mb-2><a href="<%= article["url"] %>" target="_blank"><%= article["title"] %></a></h4>
+        <a href="<%= article["url"] %>" target="_blank"><%= article["title"] %></a></h4>
     </div>
     <% end %>
     <%= submit_tag "Update your favorited articles" %>
 <% end %>
 <br>
+</section>
