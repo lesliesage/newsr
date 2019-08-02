@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should redirect when trying access search w/o logging in" do
+    post '/users/search'
+    assert_redirected_to '/login'
+  end
 end

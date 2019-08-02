@@ -6,4 +6,4 @@ one:
 
 two:
   original_text: MyString
-  search_date: <%= 5.day.ago.to_s(:db) %>
+  search_date: <%= 35.day.ago.to_s(:db) %>
