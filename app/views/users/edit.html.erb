@@ -5,9 +5,10 @@
         <h2 class="text-white mb-4">Edit Your Profile</h2>
           <br>
           <% if @test_user && @test_user.errors.any? %>
-            <h4 style="color: red" mb-2"><%= @test_user.errors.full_messages.first %></h4>
+            <h4 style="color: red" mb-2><%= @test_user.errors.full_messages.first %></h4>
           <% end %>
         <h2 class="text-black mb-4"><%= render 'user_information_form' %></h2>
+      <%= link_to "View your qr code again", qr_path, class: "link-color"%>
       </div>
     </div>
   </div>

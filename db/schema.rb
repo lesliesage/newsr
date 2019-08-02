@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_08_02_140840) do
 
   create_table "searches", force: :cascade do |t|
     t.string "original_text"
+    t.integer "search_term_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "search_date"
