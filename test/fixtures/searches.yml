@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
-  search_term_id: 1
+  original_text: MyString
+  search_date: <%= 3.day.ago.to_s(:db) %>
 
 two:
-  user_id: 1
-  search_term_id: 1
+  original_text: MyString
+  search_date: <%= 5.day.ago.to_s(:db) %>

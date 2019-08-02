@@ -5,10 +5,10 @@ Favorite.destroy_all
 Follow.destroy_all
 Search.destroy_all
 
-u1 = User.create(first_name: "Bob", last_name: "Brown", username: "bob123", private: false, password: "123")
-u2 = User.create(first_name: "Jane", last_name: "Johnson", username: "jane123", private: false, password: "asd")
-u3 = User.create(first_name: "Sally", last_name: "Smith", username: "sally123", private: false, password: "asd")
-u4 = User.create(first_name: "Walter", last_name: "Williams", username: "walter123", private: true, password: "123")
+u1 = User.create(first_name: "Bob", last_name: "Brown", username: "bob123", password: "123")
+u2 = User.create(first_name: "Jane", last_name: "Johnson", username: "jane123", password: "asd")
+u3 = User.create(first_name: "Sally", last_name: "Smith", username: "sally123", password: "asd")
+u4 = User.create(first_name: "Walter", last_name: "Williams", username: "walter123", password: "123")
 u1.set_google_secret
 u2.set_google_secret
 u3.set_google_secret
