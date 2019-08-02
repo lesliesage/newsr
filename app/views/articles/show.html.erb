@@ -1,6 +1,6 @@
 
 <section id="about" class="about-section text-center">
-<h1><a href="<%= @article.url %>" target="_blank"><%= @article.title %></a></h1>
+<h1><a class="link-color" href="<%= @article.url %>" target="_blank"><%= @article.title %></a></h1>
 <br>
 <br>
 
@@ -8,16 +8,18 @@
 <br>
 <br>
 <br>
-<h4 class="text-white"><%= @article.blurb %><%= link_to "   Read More", @article.url%></h4>
+<h4 class="text-white"><%= @article.blurb %><%= link_to "   Read More", @article.url, class: "link-color"%></h4>
+<br>
+<br>
 <% if current_user.articles.include?(@article) %>
     <%= button_to "Unfavorite Article", favorite_delete_path, "method" => :delete %>
 <% else %>
     <%= button_to "Favorite Article", '/favorites', params: {:favorite => {article_id: @article.id}} %>
 <% end %>
-
-<h2>People who have favorited this article</h2>
+<br>
+<h2 class="text-white">People who have favorited this article</h2>
 
 <% @article.users.each do |user| %>
-    <li><%= link_to user.username, user_path(user) %></li>
+    <li><%= link_to user.username, user_path(user), class: "link-color" %></li>
 <% end %>
 </section>

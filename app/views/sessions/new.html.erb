@@ -6,12 +6,13 @@
       <br>
       <br>
       <div style="color: rgb(146, 146, 146)">
+ 
       <%= form_tag "/login" do %>
           <%= label_tag :username %><br>
           <%= text_field_tag :username %><br><br>
           <%= label_tag :password%><br>
           <%=password_field_tag :password%><br><br>
-          <%= label_tag "Authention Code"%><br>
+          <%= label_tag "Authentication Code"%><br>
           <%=password_field_tag :authenticator_code%><br><br>
           <%= submit_tag "Login" %>
       <% end %>

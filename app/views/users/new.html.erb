@@ -2,15 +2,19 @@
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
       <h1 class="mx-auto my-0">Sign Up Here!</h1>
-<h4><%= link_to "Or Click Here to Login", login_path %></h4>
 
 
+<br>
+<br>
 
 
 <%= form_for @user do |f|%>
     <%= render 'user_information_form' %>
 <% end %>
-
+<br>
+<br>
+<br>
+<a href="/login" class="btn btn-primary js-scroll-trigger">Or Click Here to Log In</a>
 
     </div>
   </div>

@@ -35,9 +35,9 @@
           <%= hidden_field_tag :id, @user.id %>
           <% @user.articles.each do |article| %>
           <div>
-              <h4 mb-2><%= check_box_tag 'favorite[article_ids][]', article.id,
+              <h4 mb-2 ><%= check_box_tag 'favorite[article_ids][]', article.id,
                   current_user.articles.include?(article) %>
-              <a href="<%= article_path(article) %>"><%= article.title %></a></h4>
+              <a href="<%= article_path(article) %>" class="link-color"> <%= article.title %> </a></h4>
           </div>
           <% end %>
           <br>
@@ -60,7 +60,7 @@
       <div class="col-lg-8 mx-auto">
         <h2 class="text-white mb-4">People <%= @user.username %> Follows</h2>
           <% @user.followees.each do |followee| %>
-            <h4 mb-2><%= link_to followee.username, user_path(followee) %></h4>
+            <h4 mb-2><%= link_to followee.username, user_path(followee), class: "link-color" %></h4>
           <% end %>
           <br>
           <br>
