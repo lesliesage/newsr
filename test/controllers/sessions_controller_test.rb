@@ -10,4 +10,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     post '/login'
     assert_response :success
   end
+
+
+
+  
 end
