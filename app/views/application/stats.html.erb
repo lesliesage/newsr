@@ -1,24 +1,30 @@
+<header class="masthead">
+<div class=" d-flex h-75 align-items-center">
 <h1>Newsr Stats</h1>
-
-<table style="width:60%">
+<h4>
+<table style="width:500">
   <tr>
-    <th>Superlative</th>
-    <th>Current Champ</th>
+    <th style="color: rgba(255, 255, 255, 0.5)" >Superlative    </th>
+   
+    <th style="color: rgba(255, 255, 255, 0.5)">Current Champ</th>
   </tr>
   <tr>
-    <td>Most popular article: </td>
+    <td style="color: rgba(255, 255, 255, 0.5)">Most popular article: </td>
     <td><%= link_to most_popular_article.title, most_popular_article %></td>
   </tr>
   <tr>
-    <td>Most popular user: </td>
+    <td style="color: rgba(255, 255, 255, 0.5)">Most popular user: </td>
     <td><%= link_to most_popular_user.username, most_popular_user %></td>
   </tr>
   <tr>
-    <td>Most popular search: </td>
-    <td><%= most_popular_search_term %></td>
+    <td style="color: rgba(255, 255, 255, 0.5)">Most popular search: </td>
+    <td style="color: grey"><%= most_popular_search_term %></td>
   </tr>
   <tr>
-    <td>Most prolific friender: </td>
+    <td style="color: rgba(255, 255, 255, 0.5)">Most prolific friender: </td>
     <td><%= link_to most_prolific_friender.username, most_prolific_friender %></td>
   </tr>
 </table>
+</h4>
+ </div>
+</header>
