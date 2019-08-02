@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy]
+    before_action :authorized, only: [:homepage, :show, :edit, :update, :destroy, :search, :show_search]
     helper_method :user_search_results
 
     def new

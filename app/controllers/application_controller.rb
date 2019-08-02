@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     helper_method :most_popular_user
     helper_method :most_popular_search_term
     helper_method :most_prolific_friender
+    before_action :authorized, only: [:stats]
     require 'rqrcode_core'
     require 'rqrcode'
 
